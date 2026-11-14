@@ -1,0 +1,226 @@
+/* CONFIGURACIÓN GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #ffe1eb, #ffc2d5, #fff0f5);
+    background-attachment: fixed;
+    color: #8b3658;
+}
+
+/* CONTENEDOR PRINCIPAL */
+main {
+    width: 90%;
+    max-width: 650px;
+    padding: 60px 35px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(180, 70, 110, 0.18);
+}
+
+/* TÍTULOS */
+h1 {
+    font-size: 42px;
+    margin-bottom: 25px;
+    color: #c34e7b;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #c34e7b;
+}
+
+/* MENSAJE */
+p {
+    font-size: 19px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+.top-heart {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.signature {
+    font-style: italic;
+    color: #c34e7b;
+}
+
+/* BOTÓN */
+button {
+    padding: 16px 30px;
+    border: none;
+    border-radius: 50px;
+    background: #e879a0;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #c34e7b;
+    transform: scale(1.08);
+}
+
+/* CORAZONES FLOTANTES */
+.heart {
+    position: fixed;
+    bottom: -50px;
+    font-size: 25px;
+    pointer-events: none;
+    animation: floatHeart 6s linear forwards;
+    z-index: 10;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* NAVEGACIÓN ENTRE PANTALLAS */
+.oculta {
+    display: none !important;
+}
+
+.pantalla {
+    animation: appear 0.8s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== PÁGINA: CARTA EN EL CENTRO, RECUERDOS A LOS LADOS ===== */
+#pagina {
+    width: 100%;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr minmax(320px, 600px) 1fr;
+    gap: 20px;
+    align-items: start;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* La carta se queda fija mientras se mueven las fotos */
+#carta {
+    width: 100%;
+    position: sticky;
+    top: 30px;
+}
+
+.columna {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 20px 10px;
+}
+
+/* POLAROIDS */
+.polaroid {
+    width: 100%;
+    max-width: 240px;
+    background: #fff;
+    padding: 12px 12px 0;
+    margin: 0;
+    box-shadow: 0 6px 18px rgba(180, 70, 110, 0.25);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.polaroid img,
+.polaroid video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background: #ffe1eb;
+}
+
+.polaroid figcaption {
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    color: #8b3658;
+    padding: 14px 4px 18px;
+    text-align: center;
+}
+
+.polaroid:nth-child(3n+1) { transform: rotate(-4deg); }
+.polaroid:nth-child(3n+2) { transform: rotate(3deg); }
+.polaroid:nth-child(3n)   { transform: rotate(-1.5deg); }
+
+.polaroid:hover {
+    transform: rotate(0) scale(1.06);
+    box-shadow: 0 12px 28px rgba(180, 70, 110, 0.4);
+    z-index: 2;
+}
+
+/* TABLET Y MÓVIL: carta arriba, recuerdos debajo en dos columnas */
+@media (max-width: 1000px) {
+    .layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    #carta {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        position: static;
+        justify-self: center;
+        margin-bottom: 20px;
+    }
+
+    .columna {
+        padding: 10px 5px;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    main {
+        padding: 40px 22px;
+    }
+
+    .layout {
+        padding: 0 10px;
+    }
+
+    .polaroid figcaption {
+        font-size: 1.1rem;
+    }
+}
