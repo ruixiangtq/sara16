@@ -186,24 +186,58 @@ button:hover {
     z-index: 2;
 }
 
-/* TABLET Y MÓVIL: carta arriba, recuerdos debajo en dos columnas */
+/* TABLET Y MÓVIL: misma estructura que en ordenador, todo más pequeño */
 @media (max-width: 1000px) {
+    body {
+        padding: 10px 0;
+    }
+
     .layout {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
+        grid-template-columns: 1fr 1.9fr 1fr;
+        gap: 6px;
+        padding: 0 6px;
     }
 
     #carta {
-        grid-column: 1 / -1;
-        grid-row: 1;
-        position: static;
-        justify-self: center;
-        margin-bottom: 20px;
+        top: 10px;
+        padding: 22px 10px;
+        border-radius: 18px;
+    }
+
+    #carta h1 {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    #carta h2 {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    #carta p {
+        font-size: 12px;
+        line-height: 1.5;
+        margin-bottom: 14px;
+    }
+
+    #carta .top-heart {
+        font-size: 28px;
+        margin-bottom: 6px;
     }
 
     .columna {
-        padding: 10px 5px;
-        gap: 1.5rem;
+        padding: 4px 0;
+        gap: 1rem;
+    }
+
+    .polaroid {
+        max-width: 100%;
+        padding: 5px 5px 0;
+    }
+
+    .polaroid figcaption {
+        font-size: 0.8rem;
+        padding: 6px 2px 8px;
     }
 }
 
@@ -214,13 +248,5 @@ button:hover {
 
     main {
         padding: 40px 22px;
-    }
-
-    .layout {
-        padding: 0 10px;
-    }
-
-    .polaroid figcaption {
-        font-size: 1.1rem;
     }
 }
