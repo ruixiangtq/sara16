@@ -56,21 +56,21 @@ const recuerdos = [
     { archivo: "fotos/fotoespejo.jpeg", texto: "" },
     { archivo: "fotos/fotoconhamburguesas.jpeg", texto: "" },
     { archivo: "fotos/video ferias.mp4", texto: "" },
-    { archivo: "fotos/saraconflores.jpeg", texto: "" },
-    { archivo: "fotos/fotoparquegrande.jpeg", texto: "" },
+    { archivo: "fotos/f4.jpeg", texto: "" },
+    { archivo: "fotos/f7.jpeg", texto: "" },
     { archivo: "fotos/video abrazo.mp4", texto: "" },
     { archivo: "fotos/fotoutebo.jpeg", texto: "" },
-    { archivo: "fotos/fotosara.jpeg", texto: "" },
+    { archivo: "fotos/v1.mp4", texto: "" },
     { archivo: "fotos/losdosconflores.jpeg", texto: "" },
     { archivo: "fotos/f1.jpeg", texto: "" },
     { archivo: "fotos/f2.jpeg", texto: "" },
     { archivo: "fotos/f3.jpeg", texto: "" },
-    { archivo: "fotos/f4.jpeg", texto: "" },
+    { archivo: "fotos/saraconflores.jpeg", texto: "" },
     { archivo: "fotos/f5.jpeg", texto: "" },
-    { archivo: "fotos/f7.jpeg", texto: "" },
+    { archivo: "fotos/fotoparquegrande.jpeg", texto: "" },
     { archivo: "fotos/f8.jpeg", texto: "" },
     { archivo: "fotos/f9.jpeg", texto: "" },
-    { archivo: "fotos/v1.mp4", texto: "" }
+    { archivo: "fotos/fotosara.jpeg", texto: "" }
 ];
 const colIzq = document.getElementById("colIzq");
 const colDer = document.getElementById("colDer");
