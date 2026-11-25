@@ -48,9 +48,7 @@ setInterval(createHeart, 500);
 
 
 // ===== RECUERDOS POLAROID =====
-// Cambia "archivo" por los nombres reales de tu carpeta "fotos"
-// (ojo con la extensión: .jpg, .jpeg, .png, .mp4...)
-// y "texto" por lo que quieras que ponga debajo de cada polaroid.
+//  "texto" por lo que quieras que ponga debajo de cada polaroid.
 // Se reparten solos: uno a la izquierda, uno a la derecha, y así.
 const recuerdos = [
     { archivo: "fotos/fotoespejo.jpeg", texto: "" },
